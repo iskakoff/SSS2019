@@ -1,0 +1,33 @@
+# c compiler
+CC = @CC@
+# c++ compiler
+CXX = @CXX@
+PROG = main.exe 
+CXXFLAGS = -O3 -g 
+
+LIBS = @LIBS@
+
+INCLUDES = @INCLUDES@
+
+OBJ =  main.o
+
+all: build_all 
+
+build_all: $(PROG)
+
+clobber:
+	rm -f *.o
+
+clean:clobber
+	rm -f ${PROG}
+
+$(PROG): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(PROG) $(OBJ) $(LIBS)
+	echo "Build completed"
+
+%.o : %.c
+	$(CC) $(CXXFLAGS) ${INCLUDES} -c -o $@ $<
+
+%.o : %.cpp 
+	$(CXX) $(CXXFLAGS) ${INCLUDES} -c -o $@ $<
+
