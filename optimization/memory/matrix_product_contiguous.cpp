@@ -6,7 +6,7 @@
 #include <sstream>
 
 const int N_ITER = 10;
-const int N = 5000;
+const int N = 1500;
 
 template<typename T>
 struct matrix {
