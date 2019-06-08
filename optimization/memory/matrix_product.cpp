@@ -6,7 +6,7 @@
 #include <sstream>
 
 const int N_ITER = 10;
-const int N = 500;
+const int N = 5000;
 
 template<typename X>
 void init(std::vector<std::vector<X> >&x) {
