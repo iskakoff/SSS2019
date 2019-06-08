@@ -5,8 +5,8 @@
 #include <chrono>
 #include <sstream>
 
-const int N_ITER = 10;
-const int N = 1500;
+const int N_ITER = 5;
+const int N = 500;
 
 template<typename T>
 struct matrix {
