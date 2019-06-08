@@ -11,9 +11,10 @@ RelWithDebInfo MinSizeRel."
       FORCE)
 endif()
 
-add_subdirectory(memory)
-add_subdirectory(memory_access_patterns)
-add_subdirectory(loop)
-add_subdirectory(avx2)
+
+add_subdirectory(01_avx2)
+add_subdirectory(02_memory_access_patterns)
+add_subdirectory(03_memory)
+add_subdirectory(04_loop)
 
 
