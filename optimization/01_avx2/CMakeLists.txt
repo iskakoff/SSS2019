@@ -8,5 +8,5 @@ else ()
 endif ()
 
 
-add_executable(Example05 dot_product.cpp)
-add_executable(Example06 dot_product_avx2.cpp)
+add_executable(Example01 dot_product.cpp)
+add_executable(Example02 dot_product_avx2.cpp)

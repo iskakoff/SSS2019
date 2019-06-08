@@ -13,5 +13,5 @@ else ()
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx2")
 endif ()
 
-add_executable(Example01 matrix_product.cpp) 
-add_executable(Example02 matrix_product_contiguous.cpp) 
+add_executable(Example04 matrix_product.cpp) 
+add_executable(Example05 matrix_product_contiguous.cpp) 
