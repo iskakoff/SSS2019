@@ -4,15 +4,15 @@
 #include <chrono>
 #include <unistd.h>
 
-const int LONG_SIZE = 8;
+const int LONG_SIZE = sizeof(long);
 const int PAGE_SIZE = sysconf(_SC_PAGESIZE);//2 * 1024 * 1024;
 const int ONE_GIG = 1024 * 1024 * 1024;
-const long TWO_GIG = 2L * ONE_GIG;
+const size_t TWO_GIG = 2L * ONE_GIG;
 
-const int ARRAY_SIZE = (int) (TWO_GIG / LONG_SIZE);
+const size_t ARRAY_SIZE = (size_t) (4*TWO_GIG / LONG_SIZE);
 const int WORDS_PER_PAGE = PAGE_SIZE / LONG_SIZE;
 
-const int ARRAY_MASK = ARRAY_SIZE - 1;
+const size_t ARRAY_MASK = ARRAY_SIZE - 1;
 const int PAGE_MASK = WORDS_PER_PAGE - 1;
 
 const int PRIME_INC = 514229;
@@ -30,8 +30,8 @@ void perfTest(int runNumber, const StrideType& strideType) {
   auto start = std::chrono::high_resolution_clock::now();
   int pos = -1;
   long result = 0;
-  for (int pageOffset = 0; pageOffset < ARRAY_SIZE; pageOffset += WORDS_PER_PAGE) {
-    for (int wordOffset = pageOffset, limit = pageOffset + WORDS_PER_PAGE;
+  for (size_t pageOffset = 0; pageOffset < ARRAY_SIZE; pageOffset += WORDS_PER_PAGE) {
+    for (size_t wordOffset = pageOffset, limit = pageOffset + WORDS_PER_PAGE;
          wordOffset < limit;
          wordOffset++) {
       pos = strideType.next(pageOffset, wordOffset, pos);
