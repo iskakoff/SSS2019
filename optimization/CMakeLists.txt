@@ -12,6 +12,7 @@ RelWithDebInfo MinSizeRel."
 endif()
 
 add_subdirectory(memory)
+add_subdirectory(memory_access_patterns)
 add_subdirectory(loop)
 add_subdirectory(avx2)
 
