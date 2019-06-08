@@ -1,4 +1,4 @@
-project(loops)
+project(avx2)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
   # using Intel C++
